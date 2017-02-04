@@ -1,0 +1,50 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>notas</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-card *ngFor="let note of notes; let i = index">
+       
+        <ion-item>
+            <img *ngIf="note.photoUri" src="http://ionicframework.com/dist/preview-app/www/assets/img/nin-live.png"/>
+            
+            <ion-card-header>
+              {{ note.title }}
+            </ion-card-header>
+            <ion-card-content>
+              <p>{{ note.content }}</p>
+            </ion-card-content>
+        </ion-item>
+        
+        <ion-row no-padding>
+          <ion-col>
+            <button ion-button icon-only clear (click)="addPhoto(note)" light>
+                <ion-icon name="camera"></ion-icon>
+            </button>
+          </ion-col>
+          <ion-col>
+            <button ion-button icon-only clear (click)="editNote(note)" danger>
+              <ion-icon name="create"></ion-icon>
+            </button>
+          </ion-col>
+          <ion-col>
+             <button ion-button icon-only color="danger" clear (click)="deleteNote(note)" danger>
+                <ion-icon name="trash"></ion-icon>
+            </button>
+          </ion-col>          
+        </ion-row>
+    </ion-card>
+  </ion-list>
+  <button ion-button block (click)="addNote()">
+    <ion-icon name="add-circle"></ion-icon> <p> Nota </p>
+  </button>
+</ion-content>
