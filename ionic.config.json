@@ -1,6 +1,12 @@
 {
   "name": "primerApp",
-  "app_id": "",
+  "app_id": "2c8738a6",
   "v2": true,
-  "typescript": true
+  "typescript": true,
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "https://ionic-service-a-santamaria.c9users.io:8080"
+    }
+  ]
 }

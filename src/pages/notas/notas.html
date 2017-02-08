@@ -15,7 +15,7 @@
     <ion-card *ngFor="let note of notes; let i = index">
        
         <ion-item>
-            <img *ngIf="note.photoUri" src="http://ionicframework.com/dist/preview-app/www/assets/img/nin-live.png"/>
+            <img *ngIf="note.photo" src="{{note.photo}}"/>
             
             <ion-card-header>
               {{ note.title }}
